@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savana — Fashion From London</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== ANNOUNCEMENT BAR ====== -->
+<div class="announce-bar">
+  <span>🚚 FREE SHIPPING ON ALL ORDERS &nbsp;&nbsp;|&nbsp;&nbsp; 🔥 FLASH SALE: UP TO 60% OFF &nbsp;&nbsp;|&nbsp;&nbsp; ↩ EASY 30-DAY RETURNS &nbsp;&nbsp;|&nbsp;&nbsp; 💳 SECURE CHECKOUT &nbsp;&nbsp;|&nbsp;&nbsp; 🌟 NEW DROPS DAILY</span>
+</div>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-left">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links">
+      <li><a href="#new-in">New In</a></li>
+      <li><a href="#categories">Women</a></li>
+      <li><a href="#sale">Sale</a></li>
+      <li><a href="#trending">Trends</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+  </div>
+  <a class="brand" href="#">SAVANA</a>
+  <div class="nav-right">
+    <button class="nav-icon" onclick="toggleSearch()" title="Search">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+    <button class="nav-icon" title="Wishlist" onclick="showToast('❤️ Wishlist coming soon!')">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </button>
+    <button class="nav-icon" onclick="toggleCart()" title="Bag">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Search -->
+<div class="search-wrap" id="searchWrap">
+  <div class="search-inner">
+    <svg width="18" height="18" fill="none" stroke="#999" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Search for dresses, tops, jeans..." oninput="filterProducts(this.value)">
+    <button onclick="toggleSearch()">✕</button>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="menu-close" onclick="toggleMenu()">✕</button>
+  <a href="#new-in"     onclick="toggleMenu()">New In</a>
+  <a href="#categories" onclick="toggleMenu()">Women</a>
+  <a href="#sale"       onclick="toggleMenu()">Sale</a>
+  <a href="#trending"   onclick="toggleMenu()">Trends</a>
+  <a href="#reviews"    onclick="toggleMenu()">Reviews</a>
+  <a href="#newsletter" onclick="toggleMenu()">Newsletter</a>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">✦ NEW SEASON DROP</div>
+      <h1>Dress for the<br><em>Adventure</em><br>of Everyday Life</h1>
+      <p class="hero-sub">Statement pieces straight from your moodboard.<br>Join the #SavanaSquad — 10M+ shoppers worldwide.</p>
+      <div class="hero-btns">
+        <a href="#new-in" class="btn-hero-primary">Shop New In</a>
+        <a href="#sale"   class="btn-hero-ghost">View Sale →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span>10M+</span><small>Happy Shoppers</small></div>
+        <div class="hero-stat"><span>60%</span><small>Max Discount</small></div>
+        <div class="hero-stat"><span>Free</span><small>Shipping Always</small></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cards-wrap">
+        <div class="hero-float-card hfc1">
+          <div class="hfc-emoji">👗</div>
+          <div class="hfc-name">Floral Midi Dress</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+            <span class="hfc-price">₹1,299</span>
+            <span class="hfc-old">₹2,499</span>
+          </div>
+        </div>
+        <div class="hero-float-card hfc2">
+          <div class="hfc-emoji">✨</div>
+          <div class="hfc-name">Glam Collection</div>
+          <span class="hfc-badge">NEW DROP</span>
+        </div>
+        <div class="hero-float-card hfc3">
+          <div class="hfc-emoji">🌟</div>
+          <div class="hfc-name">4.7 ★ Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CATEGORIES ====== -->
+<section class="categories-section" id="categories">
+  <div class="section-eyebrow">BROWSE BY</div>
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterByTag('dress')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#fce4ec,#f8bbd0)">👗</div>
+      <span class="cat-label">Dresses</span>
+    </div>
+    <div class="cat-card" onclick="filterByTag('top')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#e8f5e9,#c8e6c9)">👚</div>
+      <span class="cat-label">Tops</span>
+    </div>
+    <div class="cat-card" onclick="filterByTag('jeans')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#e3f2fd,#bbdefb)">👖</div>
+      <span class="cat-label">Jeans</span>
+    </div>
+    <div class="cat-card" onclick="filterByTag('jacket')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#fff8e1,#ffecb3)">🧥</div>
+      <span class="cat-label">Jackets</span>
+    </div>
+    <div class="cat-card" onclick="filterByTag('shoes')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#fbe9e7,#ffccbc)">👠</div>
+      <span class="cat-label">Shoes</span>
+    </div>
+    <div class="cat-card" onclick="filterByTag('accessory')">
+      <div class="cat-thumb" style="background:linear-gradient(145deg,#ede7f6,#d1c4e9)">👜</div>
+      <span class="cat-label">Accessories</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SALE BANNER ====== -->
+<section class="sale-banner" id="sale">
+  <div class="sb-text">
+    <div class="section-eyebrow" style="color:#fff;opacity:0.7">FLASH SALE — LIMITED TIME</div>
+    <h2>Up to <span>60% OFF</span><br>Selected Styles</h2>
+    <p>New lines added every day. Don't miss out on your next favourite piece.</p>
+    <a href="#new-in" class="btn-sale">Shop the Sale →</a>
+  </div>
+  <div class="sb-badges">
+    <div class="sb-badge"><div class="sbb-icon">🔥</div><b>60%</b><small>Max Off</small></div>
+    <div class="sb-badge"><div class="sbb-icon">🚚</div><b>Free</b><small>Shipping</small></div>
+    <div class="sb-badge"><div class="sbb-icon">↩</div><b>30</b><small>Day Returns</small></div>
+    <div class="sb-badge"><div class="sbb-icon">🔒</div><b>Secure</b><small>Checkout</small></div>
+  </div>
+</section>
+
+<!-- ====== PRODUCTS ====== -->
+<section class="products-section" id="new-in">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">JUST DROPPED</div>
+      <h2 class="section-title" style="margin-bottom:0">New In</h2>
+    </div>
+    <div class="filter-tabs">
+      <button class="ftab active" onclick="filterByTab('all',this)">All</button>
+      <button class="ftab" onclick="filterByTab('dress',this)">Dresses</button>
+      <button class="ftab" onclick="filterByTab('top',this)">Tops</button>
+      <button class="ftab" onclick="filterByTab('jeans',this)">Jeans</button>
+      <button class="ftab" onclick="filterByTab('jacket',this)">Jackets</button>
+      <button class="ftab" onclick="filterByTab('shoes',this)">Shoes</button>
+      <button class="ftab" onclick="filterByTab('accessory',this)">Accessories</button>
+    </div>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+  <div class="load-more-wrap">
+    <button class="btn-load-more" onclick="loadMore()">Load More Styles</button>
+  </div>
+</section>
+
+<!-- ====== TRENDING ====== -->
+<section class="trending-section" id="trending">
+  <div class="trending-inner">
+    <div class="section-eyebrow" style="text-align:center">THIS WEEK</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:0">Trending Now 🔥</h2>
+    <div class="trend-grid">
+      <div class="trend-card span-col" style="background:linear-gradient(145deg,#1a1a2e,#16213e)">
+        <div class="tc-emoji">✨</div>
+        <div class="tc-title">Glam Night Out</div>
+        <div class="tc-sub">Sequins, satin and statement looks for your next big night</div>
+        <a href="#new-in" class="tc-link">Explore the Collection →</a>
+      </div>
+      <div class="trend-card" style="background:linear-gradient(145deg,#1a3a1a,#2d5a2d)">
+        <div class="tc-emoji">🌸</div>
+        <div class="tc-title">Floral Season</div>
+        <div class="tc-sub">In bloom — botanical prints all day every day</div>
+        <a href="#new-in" class="tc-link">Shop Now →</a>
+      </div>
+      <div class="trend-card" style="background:linear-gradient(145deg,#3a1a1a,#5a2d2d)">
+        <div class="tc-emoji">☀️</div>
+        <div class="tc-title">Summer Vibes</div>
+        <div class="tc-sub">Light, breezy, effortlessly cool</div>
+        <a href="#new-in" class="tc-link">Shop Now →</a>
+      </div>
+      <div class="trend-card" style="background:linear-gradient(145deg,#2d1b69,#11998e)">
+        <div class="tc-emoji">🧸</div>
+        <div class="tc-title">Soft Girl Era</div>
+        <div class="tc-sub">Pastels, puff sleeves and sweet everything</div>
+        <a href="#new-in" class="tc-link">Shop Now →</a>
+      </div>
+      <div class="trend-card" style="background:linear-gradient(145deg,#1a1040,#4a235a)">
+        <div class="tc-emoji">👑</div>
+        <div class="tc-title">Luxe Essentials</div>
+        <div class="tc-sub">Elevated basics that do all the talking</div>
+        <a href="#new-in" class="tc-link">Shop Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== USP ====== -->
+<section class="usp-section">
+  <div class="section-eyebrow" style="text-align:center">WHY SAVANA</div>
+  <h2 class="section-title" style="text-align:center">Fashion Made Easy</h2>
+  <div class="usp-grid">
+    <div class="usp-item"><div class="usp-icon">🚚</div><h4>Free Shipping</h4><p>On every single order. No minimum spend required.</p></div>
+    <div class="usp-item"><div class="usp-icon">↩</div><h4>Easy Returns</h4><p>Hassle-free 30-day returns. No questions asked.</p></div>
+    <div class="usp-item"><div class="usp-icon">🔒</div><h4>Secure Checkout</h4><p>Multiple payment options. 100% safe and encrypted.</p></div>
+    <div class="usp-item"><div class="usp-icon">📦</div><h4>Order Tracking</h4><p>Real-time tracking from checkout to your door.</p></div>
+    <div class="usp-item"><div class="usp-icon">🌟</div><h4>Daily New Drops</h4><p>Fresh styles added every single day — stay ahead.</p></div>
+    <div class="usp-item"><div class="usp-icon">💬</div><h4>24/7 Support</h4><p>Our squad is always here to help you style up.</p></div>
+  </div>
+</section>
+
+<!-- ====== REVIEWS ====== -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-eyebrow" style="text-align:center">CUSTOMER LOVE</div>
+    <h2 class="section-title" style="text-align:center">What the Squad Says 💬</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Been using Savana for months. The styles are so trendy and quality is amazing. Gets me compliments every single time I step out!"</p>
+        <div class="review-author"><div class="ra-av" style="background:#fce4ec">P</div><span>Priya M. · Mumbai</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Free shipping and easy returns make it a total no-brainer. I order something new every week and my wardrobe has never looked better!"</p>
+        <div class="review-author"><div class="ra-av" style="background:#e8f5e9">S</div><span>Sneha K. · Delhi</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"The clothes match the photos perfectly. Fast delivery, beautiful packaging, and the styles are always on-trend. Absolutely love Savana!"</p>
+        <div class="review-author"><div class="ra-av" style="background:#e3f2fd">A</div><span>Aisha R. · Bangalore</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <div class="trust-strip">⭐ 4.7 / 5 &nbsp;·&nbsp; Trusted by 10M+ shoppers &nbsp;·&nbsp; 140K+ verified reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== NEWSLETTER ====== -->
+<section class="newsletter-section" id="newsletter">
+  <div class="nl-emoji">💌</div>
+  <h2>Join the #SavanaSquad</h2>
+  <p>Early access to new drops, exclusive offers and style inspo — straight to your inbox.</p>
+  <div class="nl-form">
+    <input type="email" id="nlEmail" placeholder="Enter your email address">
+    <button onclick="subscribeNL()">Subscribe</button>
+  </div>
+  <div class="nl-success hidden" id="nlSuccess">🎉 You're in! Welcome to the Squad.</div>
+  <p class="nl-fine">By subscribing you agree to our Privacy Policy. Unsubscribe anytime.</p>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fb-logo">SAVANA</div>
+      <p>Fashion from London for the adventure of everyday life. Curating statement pieces for 10M+ shoppers worldwide since 2021.</p>
+      <div class="social-links">
+        <a href="#">📸 Instagram</a>
+        <a href="#">🎵 TikTok</a>
+        <a href="#">📌 Pinterest</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">New In</a><a href="#">Dresses</a><a href="#">Tops and Blouses</a>
+      <a href="#">Jeans and Trousers</a><a href="#">Jackets and Coats</a>
+      <a href="#">Shoes</a><a href="#">Accessories</a><a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="#">Shipping Info</a><a href="#">Returns and Refunds</a>
+      <a href="#">Track My Order</a><a href="#">Size Guide</a>
+      <a href="#">FAQs</a><a href="#">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Savana</a><a href="#">Careers</a>
+      <a href="#">Press</a><a href="#">Sustainability</a>
+      <a href="#">Privacy Policy</a><a href="#">Terms and Conditions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Savana — Fashion From London. All rights reserved.</span>
+    <div class="pay-icons">
+      <span>💳 Visa</span><span>💳 Mastercard</span>
+      <span>📱 UPI</span><span>💰 PayPal</span><span>🍎 Apple Pay</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== CART SIDEBAR ====== -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>My Bag (<span id="cartItemCount">0</span>)</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <div style="font-size:52px;margin-bottom:14px">🛍️</div>
+      <p>Your bag is empty</p>
+      <a href="#new-in" class="btn-shop" onclick="toggleCart()">Start Shopping →</a>
+    </div>
+    <div id="cartItemsWrap"></div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <b id="cartTotal">₹0</b>
+    </div>
+    <div class="cart-free-ship">🚚 Free shipping applied!</div>
+    <button class="btn-checkout" onclick="checkout()">Checkout Securely 🔒</button>
+    <button class="btn-continue" onclick="toggleCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ====== QUICK VIEW MODAL ====== -->
+<div class="modal-bg" id="modalBg" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
